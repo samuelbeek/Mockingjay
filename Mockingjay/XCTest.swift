@@ -36,6 +36,7 @@ extension XCTest {
       XCTest.mockingjaySwizzleTearDown()
     }
 
+    URLSessionConfiguration.mockingjaySwizzleDefaultSessionConfiguration()
     return MockingjayProtocol.addStub(matcher: matcher, builder: builder)
   }
 

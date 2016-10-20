@@ -357,7 +357,7 @@ class ReservedExpansion : BaseOperator, Operator {
   override var joiner:String { return "," }
 
   override func expand(value:String) -> String {
-    return value.addingPercentEscapes(using: String.Encoding.utf8)!
+    return value.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
   }
 }
 
@@ -368,7 +368,7 @@ class FragmentExpansion : BaseOperator, Operator {
   override var joiner:String { return "," }
 
   override func expand(value:String) -> String {
-    return value.addingPercentEscapes(using: String.Encoding.utf8)!
+    return value.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
   }
 }
 
